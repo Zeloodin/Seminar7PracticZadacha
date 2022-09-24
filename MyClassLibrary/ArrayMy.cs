@@ -34,8 +34,12 @@ public class ArrayMy
         return array2D;
     }
 
+
+  
+
+
     /// Заполняет числами в двумерный массив.
-    static public double[,] Fill2DArrayToNumbers(double[,] inputArray2D, int fromMinNumber = 0, int toMaxNumber = 10, int lengthOfDigitAfterDecimalPoint = 0)
+    static public double[,] Fill2DArrayToNumbers(double[,] inputArray2D, double fromMinNumber = 0.0, double toMaxNumber = 10.0, int lengthOfDigitAfterDecimalPoint = 0)
     {
         int rowsCount = inputArray2D.GetUpperBound(0) + 1;    // Колличество строк
         int collumsCount = inputArray2D.Length / rowsCount;        // Колличество столбцов
@@ -44,16 +48,7 @@ public class ArrayMy
         {
             for (int yCountCollums = 0; yCountCollums < collumsCount; yCountCollums++)
             {
-                if (lengthOfDigitAfterDecimalPoint != 0)
-                {
-                    inputArray2D[xCountRows, yCountCollums] = Convert.ToDouble(new Random()
-                                                        .Next(fromMinNumber * lengthOfDigitAfterDecimalPoint
-                                                        , toMaxNumber * lengthOfDigitAfterDecimalPoint)) / lengthOfDigitAfterDecimalPoint;
-                }
-                else
-                {
-                    inputArray2D[xCountRows, yCountCollums] = Convert.ToDouble(new Random().Next(fromMinNumber, toMaxNumber));
-                }
+                inputArray2D[xCountRows, yCountCollums] = RandomMy.RandomNextPlus(lengthOfDigitAfterDecimalPoint, fromMinNumber, toMaxNumber);
             }
         }
         return inputArray2D;

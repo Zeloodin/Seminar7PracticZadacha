@@ -1,5 +1,5 @@
 namespace MyClassLibrary;
-public class RandomGeneratorNumbers
+public class RandomMy
 {
     static public double[] FillingAnArrayWithConsecutiveNumbers(int numLenght, ref double[] arrNum)
     {
@@ -11,6 +11,8 @@ public class RandomGeneratorNumbers
         return arrNum;
     }
 
+
+    ///RandomNextNoRepeat
     static public double[] GeneratorOfRandomNonRepeatingNumbersIntoAnArray(double[] arrNum, ref double[] listNumber)
     {
         double[] arrNumbers = arrNum;
@@ -34,5 +36,12 @@ public class RandomGeneratorNumbers
         FillingAnArrayWithConsecutiveNumbers(numLenght: lenghtListNumber, ref arrayNumber);
         GeneratorOfRandomNonRepeatingNumbersIntoAnArray(arrNum: arrayNumber, listNumber: ref listNumber);
         return listNumber;
+    }
+
+
+    /// RandomNumberGeneratorPlusNumbersAfterDot
+    static public double RandomNextPlus(int lengthOfDigitAfterDecimalPoint = 0, double fromMinNumber = 0.0, double toMaxNumber = 10.0)
+    {
+        return Math.Round(new Random().NextDouble() * (toMaxNumber - fromMinNumber) + fromMinNumber, lengthOfDigitAfterDecimalPoint);
     }
 }
