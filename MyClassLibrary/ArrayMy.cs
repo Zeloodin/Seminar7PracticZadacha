@@ -35,7 +35,7 @@ public class ArrayMy
     }
 
     /// Заполняет числами в двумерный массив.
-    static public double[,] Fill2DArrayToNumbers(double[,] inputArray2D, int fromMinNumber, int toMaxNumber, int lengthOfDigitAfterDecimalPoint = 0)
+    static public double[,] Fill2DArrayToNumbers(double[,] inputArray2D, int fromMinNumber = 0, int toMaxNumber = 10, int lengthOfDigitAfterDecimalPoint = 0)
     {
         int rowsCount = inputArray2D.GetUpperBound(0) + 1;    // Колличество строк
         int collumsCount = inputArray2D.Length / rowsCount;        // Колличество столбцов
