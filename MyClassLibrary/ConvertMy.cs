@@ -82,5 +82,21 @@ public class ConvertMy
 
 
 
+    static public int[,] ConvertArray2DToInt32<T>(T[,] inputArray2D)
+    {
+        int rowsCount = inputArray2D.GetLength(0);     // Колличество строк
+        int collumsCount = inputArray2D.GetLength(1);  // Колличество столбцов
+        int[,] convertedInputArray = new int[rowsCount, collumsCount];
+
+        for (int row = 0; row < rowsCount; row++)
+        {
+            for (int collum = 0; collum < collumsCount; collum++)
+            {
+                convertedInputArray[row, collum] = Convert.ToInt32(inputArray2D[row, collum]);
+            }
+        }
+        return convertedInputArray;
+    }
+
 }
 

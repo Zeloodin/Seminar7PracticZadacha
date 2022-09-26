@@ -14,27 +14,15 @@
 
 using MyClassLibrary;
 
-// int[,] arrayNums = ;
 
-double[] nums = ArrayMy.Fill2DArrayToNumbers(ArrayMy.Create2DArray(15,15));
-int[] numsToInt = ConvertArrayToInt32(nums);
+int[,] arrayNums = ConvertMy.ConvertArray2DToInt32(ArrayMy.Fill2DArrayToNumbers(ArrayMy.Create2DArray(3,3)));
 
 
-int[,] ConvertArray2DToInt32<T>(T inputArray2D, string convertToType = "ToInt32")
-{
-    int rowsCount = inputArray2D.GetUpperBound(0) + 1;   // Колличество строк
-    int collumsCount = inputArray2D.Length / rowsCount;  // Колличество столбцов
-    int[,] convertedInputArray = new int[rowsCount,collumsCount];
 
-    for (int row = 0; row < rowsCount; row++)
-    {
-        for (int collum = 0; collum < collumsCount; collum++)
-        {
-            convertedInputArray[row,collum] = Convert.convertToType(inputArray2D[row,collum]);
-        }
-    }
-    return convertedInputArray;
-}
+ArrayMy.WriteArray2D(arrayNums);
 
-ArrayMy.WriteArray2D(nums);
-ArrayMy.WriteArray2D(numsToInt);
+Console.WriteLine("Среднее арифметическое каждого столбца: "+
+              $"{String.Join("; ",ArrayMy.Array2DSumRowsAverage(arrayNums, 1))}.");
+Console.WriteLine("Среднее арифметическое каждого ряда: "+
+              $"{String.Join("; ",ArrayMy.Array2DSumCollumsAverage(arrayNums, 1))}.");
+

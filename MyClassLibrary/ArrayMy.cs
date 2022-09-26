@@ -3,7 +3,7 @@ namespace MyClassLibrary;
 public class ArrayMy
 {
     /// Показывает одномерный массив.
-    static public void WriteArray<T>(T[] inputArray, string spaceEnd = "")
+    static public void WriteArray<T>(T[] inputArray, string spaceEnd = "\n")
     {
         for (int i = 0; i < inputArray.Length; i++)
         {
@@ -53,6 +53,10 @@ public class ArrayMy
         }
         return inputArray2D;
     }
+
+
+
+
 
 
 
@@ -153,12 +157,45 @@ public class ArrayMy
                 }
             }
         }
-
-        
-
         return arrayList;
     }
 
 
+
+
+
+
+    static public  double[] Array2DSumRowsAverage<T>(T[,] inputArray2D, int lenOfNumsAftrPoint = 0)
+    {
+        int rowsCount = inputArray2D.GetLength(0);     // Колличество строк
+        int collumsCount = inputArray2D.GetLength(1);  // Колличество столбцов
+        double[] sumAverage = new double[collumsCount];
+        for (int collum = 0; collum < collumsCount; collum++)
+        {
+            for (int row = 0; row < rowsCount; row++)
+            {
+                sumAverage[collum] += Convert.ToDouble(inputArray2D[row,collum]);
+            }
+            sumAverage[collum] = Math.Round(sumAverage[collum] / Convert.ToDouble(rowsCount),lenOfNumsAftrPoint);
+        }
+        return sumAverage;
+    }
+
+
+    static public  double[] Array2DSumCollumsAverage<T>(T[,] inputArray2D, int lenOfNumsAftrPoint = 0)
+    {
+        int rowsCount = inputArray2D.GetLength(0);     // Колличество строк
+        int collumsCount = inputArray2D.GetLength(1);  // Колличество столбцов
+        double[] sumAverage = new double[collumsCount];
+        for (int row = 0; row < rowsCount; row++)
+        {
+            for (int collum = 0; collum < collumsCount; collum++)
+            {
+                sumAverage[row] += Convert.ToDouble(inputArray2D[row,collum]);
+            }
+            sumAverage[row] = Math.Round(sumAverage[row] / Convert.ToDouble(collumsCount),lenOfNumsAftrPoint);
+        }
+        return sumAverage;
+    }
 
 }
