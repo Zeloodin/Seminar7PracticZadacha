@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClassLibrary", "MyClassLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadacha_47", "Zadacha_47\Zadacha_47.csproj", "{A62CAFBF-3228-40BB-B202-6B9E6964672B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadacha_50", "Zadacha_50\Zadacha_50.csproj", "{9EE90C2B-B009-4764-BDC0-F0CC2D68E8D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{A62CAFBF-3228-40BB-B202-6B9E6964672B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A62CAFBF-3228-40BB-B202-6B9E6964672B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A62CAFBF-3228-40BB-B202-6B9E6964672B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE90C2B-B009-4764-BDC0-F0CC2D68E8D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE90C2B-B009-4764-BDC0-F0CC2D68E8D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE90C2B-B009-4764-BDC0-F0CC2D68E8D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE90C2B-B009-4764-BDC0-F0CC2D68E8D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
